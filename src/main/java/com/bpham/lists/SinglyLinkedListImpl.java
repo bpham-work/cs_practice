@@ -23,7 +23,7 @@ public class SinglyLinkedListImpl<T> implements SinglyLinkedList<T> {
         Node<T> nodeToReturn = this.head;
         throwIndexOutOfBoundsExceptionIfNull(nodeToReturn, index);
         int counter = 0;
-        while(counter < index) {
+        while (counter < index) {
             throwIndexOutOfBoundsExceptionIfNull(nodeToReturn, index);
             nodeToReturn = nodeToReturn.nextNode;
             counter++;
@@ -42,10 +42,45 @@ public class SinglyLinkedListImpl<T> implements SinglyLinkedList<T> {
         return tail != null ? tail.value : null;
     }
 
+    public void remove(int index) {
+        Node<T> node = this.head;
+        throwIndexOutOfBoundsExceptionIfNull(node, index);
+
+        if (index == 0) {
+            removeHead();
+            return;
+        }
+
+        int counter = 0;
+        while (counter < index) {
+            throwIndexOutOfBoundsExceptionIfNull(node, index);
+            if ((counter + 1) == index) {
+                Node<T> nodeToRemove = node.nextNode;
+                node.nextNode = nodeToRemove.nextNode;
+                nullOutNode(node);
+                return;
+            }
+            node = node.nextNode;
+            counter++;
+        }
+    }
+
+    private void removeHead() {
+        if (head != null) {
+            Node<T> headNode = head;
+            head = head.nextNode;
+            nullOutNode(headNode);
+        }
+    }
+
     private void throwIndexOutOfBoundsExceptionIfNull(Node<T> nodeToReturn, int index) {
         if (nodeToReturn == null) {
             throw new IndexOutOfBoundsException(format("No element at index %d", index));
         }
+    }
+
+    private void nullOutNode(Node<T> node) {
+        node = null;
     }
 
     public int size() {

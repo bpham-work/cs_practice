@@ -6,4 +6,5 @@ public interface SinglyLinkedList<T> {
     T get(int index);
     T first();
     T last();
+    void remove(int index);
 }

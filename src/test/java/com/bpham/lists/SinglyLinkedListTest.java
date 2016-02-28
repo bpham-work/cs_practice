@@ -114,4 +114,44 @@ public class SinglyLinkedListTest {
 
         assertNull(result);
     }
+
+    @Test
+    public void removeElementAtIndex() {
+        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<Integer>();
+        list.add(5);
+        list.add(4);
+        list.add(3);
+
+        list.remove(1);
+
+        assertEquals(5, (int) list.get(0));
+        assertEquals(3, (int) list.get(1));
+    }
+
+    @Test
+    public void removeHeadElement() {
+        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<Integer>();
+        list.add(5);
+        list.add(4);
+        list.add(3);
+
+        list.remove(0);
+
+        assertEquals(4, (int) list.get(0));
+        assertEquals(3, (int) list.get(1));
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void throwIndexOutOfBoundsExceptionWhenRemoveInvalidIndex0() {
+        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<Integer>();
+
+        list.remove(0);
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void throwIndexOutOfBoundsExceptionWhenRemoveInvalidIndex1() {
+        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<Integer>();
+
+        list.remove(1);
+    }
 }
