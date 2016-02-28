@@ -1,5 +1,7 @@
 package com.bpham.lists;
 
+import com.bpham.domain.SinglyLinkedList;
+
 import static java.lang.String.format;
 
 public class SinglyLinkedListImpl<T> implements SinglyLinkedList<T> {
@@ -32,10 +34,7 @@ public class SinglyLinkedListImpl<T> implements SinglyLinkedList<T> {
     }
 
     public T first() {
-        if (head != null) {
-            return head.getValue();
-        }
-        return null;
+        return head != null ? head.value : null;
     }
 
     public T last() {
@@ -96,7 +95,5 @@ public class SinglyLinkedListImpl<T> implements SinglyLinkedList<T> {
         public Node(T value) {
             this.value = value;
         }
-
-        public T getValue() { return value; }
     }
 }

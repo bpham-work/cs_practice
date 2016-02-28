@@ -1,5 +1,6 @@
 package com.bpham.lists;
 
+import com.bpham.domain.SinglyLinkedList;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -169,5 +170,27 @@ public class SinglyLinkedListTest {
         SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<Integer>();
 
         list.remove(1);
+    }
+
+    @Test
+    public void testAddingFirstNode() {
+        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<Integer>();
+
+        list.add(1);
+
+        assertEquals(1, list.size());
+        assertEquals(1, (int) list.get(0));
+    }
+
+    @Test
+    public void testAddingMultipleNodes() {
+        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<Integer>();
+
+        list.add(1);
+        list.add(2);
+
+        assertEquals(2, list.size());
+        assertEquals(1, (int) list.get(0));
+        assertEquals(2, (int) list.get(1));
     }
 }
