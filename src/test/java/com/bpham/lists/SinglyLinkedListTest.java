@@ -126,6 +126,7 @@ public class SinglyLinkedListTest {
 
         assertEquals(5, (int) list.get(0));
         assertEquals(3, (int) list.get(1));
+        assertEquals(2, list.size());
     }
 
     @Test
@@ -139,6 +140,21 @@ public class SinglyLinkedListTest {
 
         assertEquals(4, (int) list.get(0));
         assertEquals(3, (int) list.get(1));
+        assertEquals(2, list.size());
+    }
+
+    @Test
+    public void removeTailElement() {
+        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<Integer>();
+        list.add(5);
+        list.add(4);
+        list.add(3);
+
+        list.remove(2);
+
+        assertEquals(5, (int) list.get(0));
+        assertEquals(4, (int) list.get(1));
+        assertEquals(2, list.size());
     }
 
     @Test(expected = IndexOutOfBoundsException.class)

@@ -58,6 +58,7 @@ public class SinglyLinkedListImpl<T> implements SinglyLinkedList<T> {
                 Node<T> nodeToRemove = node.nextNode;
                 node.nextNode = nodeToRemove.nextNode;
                 nullOutNode(node);
+                size--;
                 return;
             }
             node = node.nextNode;
@@ -70,6 +71,7 @@ public class SinglyLinkedListImpl<T> implements SinglyLinkedList<T> {
             Node<T> headNode = head;
             head = head.nextNode;
             nullOutNode(headNode);
+            size--;
         }
     }
 
