@@ -21,4 +21,8 @@ public class Node<T> {
     public void setNext(Node<T> next) {
         right = next;
     }
+
+    public void setPrev(Node<T> prev) {
+        left = prev;
+    }
 }

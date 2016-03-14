@@ -1,5 +1,6 @@
 package com.bpham.lists;
 
+import com.bpham.domain.Node;
 import com.bpham.domain.SinglyLinkedList;
 
 import static java.lang.String.format;
@@ -15,7 +16,7 @@ public class SinglyLinkedListImpl<T> implements SinglyLinkedList<T> {
             head = newNode;
             tail = newNode;
         }  else {
-            tail.nextNode = newNode;
+            tail.setNext(newNode);
             tail = newNode;
         }
         size++;
@@ -27,18 +28,18 @@ public class SinglyLinkedListImpl<T> implements SinglyLinkedList<T> {
         int counter = 0;
         while (counter < index) {
             throwIndexOutOfBoundsExceptionIfNull(nodeToReturn, index);
-            nodeToReturn = nodeToReturn.nextNode;
+            nodeToReturn = nodeToReturn.next();
             counter++;
         }
-        return nodeToReturn.value;
+        return nodeToReturn.getValue();
     }
 
     public T first() {
-        return head != null ? head.value : null;
+        return head != null ? head.getValue() : null;
     }
 
     public T last() {
-        return tail != null ? tail.value : null;
+        return tail != null ? tail.getValue() : null;
     }
 
     public void remove(int index) {
@@ -54,13 +55,13 @@ public class SinglyLinkedListImpl<T> implements SinglyLinkedList<T> {
         while (counter < index) {
             throwIndexOutOfBoundsExceptionIfNull(node, index);
             if ((counter + 1) == index) {
-                Node<T> nodeToRemove = node.nextNode;
-                node.nextNode = nodeToRemove.nextNode;
+                Node<T> nodeToRemove = node.next();
+                node.setNext(nodeToRemove.next());
                 nullOutNode(node);
                 size--;
                 return;
             }
-            node = node.nextNode;
+            node = node.next();
             counter++;
         }
     }
@@ -68,7 +69,7 @@ public class SinglyLinkedListImpl<T> implements SinglyLinkedList<T> {
     private void removeHead() {
         if (head != null) {
             Node<T> headNode = head;
-            head = head.nextNode;
+            head = head.next();
             nullOutNode(headNode);
             size--;
         }
@@ -86,14 +87,5 @@ public class SinglyLinkedListImpl<T> implements SinglyLinkedList<T> {
 
     public int size() {
         return size;
-    }
-
-    private class Node<T> {
-        Node<T> nextNode;
-        final T value;
-
-        public Node(T value) {
-            this.value = value;
-        }
     }
 }

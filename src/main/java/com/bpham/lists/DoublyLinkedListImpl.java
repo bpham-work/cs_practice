@@ -1,13 +1,13 @@
 package com.bpham.lists;
 
 import com.bpham.domain.DoublyLinkedList;
-import com.bpham.domain.DoublyNode;
+import com.bpham.domain.Node;
 
 import static java.lang.String.format;
 
 public class DoublyLinkedListImpl<T> implements DoublyLinkedList<T> {
-    private DoublyNode<T> head;
-    private DoublyNode<T> tail;
+    private Node<T> head;
+    private Node<T> tail;
     private int size = 0;
 
     public int size() {
@@ -15,13 +15,13 @@ public class DoublyLinkedListImpl<T> implements DoublyLinkedList<T> {
     }
 
     public void add(T value) {
-        DoublyNode<T> newNode = new DoublyNode<T>(value);
+        Node<T> newNode = new Node<T>(value);
         if (head == null) {
             head = newNode;
             tail = newNode;
         } else {
-            tail.setNextNode(newNode);
-            newNode.setPrevNode(tail);
+            tail.setNext(newNode);
+            newNode.setPrev(tail);
             tail = newNode;
         }
         size++;
@@ -31,19 +31,19 @@ public class DoublyLinkedListImpl<T> implements DoublyLinkedList<T> {
         return getNode(index).getValue();
     }
 
-    public DoublyNode<T> getNode(int index) {
-        DoublyNode<T> nodeToReturn = this.head;
+    public Node<T> getNode(int index) {
+        Node<T> nodeToReturn = this.head;
         throwIndexOutOfBoundsExceptionIfNull(nodeToReturn, index);
         int counter = 0;
         while (counter < index) {
             throwIndexOutOfBoundsExceptionIfNull(nodeToReturn, index);
-            nodeToReturn = nodeToReturn.getNextNode();
+            nodeToReturn = nodeToReturn.next();
             counter++;
         }
         return nodeToReturn;
     }
 
-    private void throwIndexOutOfBoundsExceptionIfNull(DoublyNode<T> nodeToReturn, int index) {
+    private void throwIndexOutOfBoundsExceptionIfNull(Node<T> nodeToReturn, int index) {
         if (nodeToReturn == null) {
             throw new IndexOutOfBoundsException(format("No element at index %d", index));
         }
@@ -58,7 +58,7 @@ public class DoublyLinkedListImpl<T> implements DoublyLinkedList<T> {
     }
 
     public void remove(int index) {
-        DoublyNode<T> node = this.head;
+        Node<T> node = this.head;
         throwIndexOutOfBoundsExceptionIfNull(node, index);
 
         if (index == 0) {
@@ -70,27 +70,27 @@ public class DoublyLinkedListImpl<T> implements DoublyLinkedList<T> {
         while (counter < index) {
             throwIndexOutOfBoundsExceptionIfNull(node, index);
             if ((counter + 1) == index) {
-                DoublyNode<T> nodeToRemove = node.getNextNode();
-                node.setNextNode(nodeToRemove.getNextNode());
+                Node<T> nodeToRemove = node.next();
+                node.setNext(nodeToRemove.next());
                 nullOutNode(node);
                 size--;
                 return;
             }
-            node = node.getNextNode();
+            node = node.next();
             counter++;
         }
     }
 
     private void removeHead() {
         if (head != null) {
-            DoublyNode<T> headNode = head;
-            head = head.getNextNode();
+            Node<T> headNode = head;
+            head = head.next();
             nullOutNode(headNode);
             size--;
         }
     }
 
-    private void nullOutNode(DoublyNode<T> node) {
+    private void nullOutNode(Node<T> node) {
         node = null;
     }
 
