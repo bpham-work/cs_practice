@@ -1,4 +1,4 @@
-package com.bpham.lists;
+package com.bpham.collections;
 
 import com.bpham.domain.DoublyLinkedList;
 import com.bpham.domain.Node;

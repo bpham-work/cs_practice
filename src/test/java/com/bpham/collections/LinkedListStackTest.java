@@ -1,4 +1,4 @@
-package com.bpham.lists;
+package com.bpham.collections;
 
 import com.bpham.domain.Stack;
 import org.junit.Test;

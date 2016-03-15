@@ -1,16 +1,40 @@
-package com.bpham.lists;
+package com.bpham.collections;
 
-import com.bpham.domain.SinglyLinkedList;
+import com.bpham.domain.DoublyLinkedList;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
-public class SinglyLinkedListTest {
+public class DoublyLinkedListTest {
+
+    @Test
+    public void addingOneNodeShouldIncrementSize() {
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
+
+        list.add(1);
+
+        assertEquals(1, list.size());
+        assertEquals(1, (int) list.get(0));
+    }
+
+    @Test
+    public void addingMultipleNodeShouldIncrementSize() {
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
+
+        list.add(1);
+        list.add(2);
+        list.add(3);
+
+        assertEquals(3, list.size());
+        assertEquals(1, (int) list.get(0));
+        assertEquals(2, (int) list.get(1));
+        assertEquals(3, (int) list.get(2));
+    }
 
     @Test
     public void returnSizeOfList() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
         list.add(1);
 
         int result = list.size();
@@ -20,7 +44,7 @@ public class SinglyLinkedListTest {
 
     @Test
     public void returnSize0WhenNothingInList() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
 
         int result = list.size();
 
@@ -29,7 +53,7 @@ public class SinglyLinkedListTest {
 
     @Test
     public void getValueAtIndex0() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
         list.add(5);
 
         int result = list.get(0);
@@ -39,7 +63,7 @@ public class SinglyLinkedListTest {
 
     @Test
     public void getValueAtIndex1() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
         list.add(5);
         list.add(4);
 
@@ -50,7 +74,7 @@ public class SinglyLinkedListTest {
 
     @Test
     public void getValueAtIndex2() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
         list.add(5);
         list.add(4);
         list.add(3);
@@ -62,21 +86,21 @@ public class SinglyLinkedListTest {
 
     @Test(expected = IndexOutOfBoundsException.class)
     public void throwIndexOutOfBoundsExceptionWhenGetByInvalidIndex1() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
 
         list.get(1);
     }
 
     @Test(expected = IndexOutOfBoundsException.class)
     public void throwIndexOutOfBoundsExceptionWhenGetByInvalidIndex0() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
 
         list.get(0);
     }
 
     @Test
     public void getFirstValueIfListHasElements() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
         list.add(5);
         list.add(4);
         list.add(3);
@@ -88,7 +112,7 @@ public class SinglyLinkedListTest {
 
     @Test
     public void getNullFirstValueIfListHasNoElements() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
 
         Integer result = list.first();
 
@@ -97,7 +121,7 @@ public class SinglyLinkedListTest {
 
     @Test
     public void getLastValueIfListHasElements() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
         list.add(5);
         list.add(4);
         list.add(3);
@@ -109,7 +133,7 @@ public class SinglyLinkedListTest {
 
     @Test
     public void getNullLastValueIfListHasNoElements() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
 
         Integer result = list.last();
 
@@ -118,7 +142,7 @@ public class SinglyLinkedListTest {
 
     @Test
     public void removeElementAtIndex() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
         list.add(5);
         list.add(4);
         list.add(3);
@@ -132,7 +156,7 @@ public class SinglyLinkedListTest {
 
     @Test
     public void removeHeadElement() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
         list.add(5);
         list.add(4);
         list.add(3);
@@ -146,7 +170,7 @@ public class SinglyLinkedListTest {
 
     @Test
     public void removeTailElement() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
         list.add(5);
         list.add(4);
         list.add(3);
@@ -160,37 +184,15 @@ public class SinglyLinkedListTest {
 
     @Test(expected = IndexOutOfBoundsException.class)
     public void throwIndexOutOfBoundsExceptionWhenRemoveInvalidIndex0() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
 
         list.remove(0);
     }
 
     @Test(expected = IndexOutOfBoundsException.class)
     public void throwIndexOutOfBoundsExceptionWhenRemoveInvalidIndex1() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
 
         list.remove(1);
-    }
-
-    @Test
-    public void testAddingFirstNode() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
-
-        list.add(1);
-
-        assertEquals(1, list.size());
-        assertEquals(1, (int) list.get(0));
-    }
-
-    @Test
-    public void testAddingMultipleNodes() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
-
-        list.add(1);
-        list.add(2);
-
-        assertEquals(2, list.size());
-        assertEquals(1, (int) list.get(0));
-        assertEquals(2, (int) list.get(1));
     }
 }
