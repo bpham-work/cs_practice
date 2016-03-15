@@ -15,7 +15,7 @@ public class DoublyLinkedListImpl<T> implements DoublyLinkedList<T> {
     }
 
     public void add(T value) {
-        Node<T> newNode = new Node<T>(value);
+        Node<T> newNode = new Node<>(value);
         if (head == null) {
             head = newNode;
             tail = newNode;
@@ -72,7 +72,6 @@ public class DoublyLinkedListImpl<T> implements DoublyLinkedList<T> {
             if ((counter + 1) == index) {
                 Node<T> nodeToRemove = node.next();
                 node.setNext(nodeToRemove.next());
-                nullOutNode(node);
                 size--;
                 return;
             }
@@ -83,15 +82,8 @@ public class DoublyLinkedListImpl<T> implements DoublyLinkedList<T> {
 
     private void removeHead() {
         if (head != null) {
-            Node<T> headNode = head;
             head = head.next();
-            nullOutNode(headNode);
             size--;
         }
     }
-
-    private void nullOutNode(Node<T> node) {
-        node = null;
-    }
-
 }

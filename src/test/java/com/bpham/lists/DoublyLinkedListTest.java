@@ -10,7 +10,7 @@ public class DoublyLinkedListTest {
 
     @Test
     public void addingOneNodeShouldIncrementSize() {
-        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<Integer>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
 
         list.add(1);
 
@@ -20,7 +20,7 @@ public class DoublyLinkedListTest {
 
     @Test
     public void addingMultipleNodeShouldIncrementSize() {
-        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<Integer>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
 
         list.add(1);
         list.add(2);
@@ -34,7 +34,7 @@ public class DoublyLinkedListTest {
 
     @Test
     public void returnSizeOfList() {
-        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<Integer>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
         list.add(1);
 
         int result = list.size();
@@ -44,7 +44,7 @@ public class DoublyLinkedListTest {
 
     @Test
     public void returnSize0WhenNothingInList() {
-        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<Integer>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
 
         int result = list.size();
 
@@ -53,7 +53,7 @@ public class DoublyLinkedListTest {
 
     @Test
     public void getValueAtIndex0() {
-        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<Integer>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
         list.add(5);
 
         int result = list.get(0);
@@ -63,7 +63,7 @@ public class DoublyLinkedListTest {
 
     @Test
     public void getValueAtIndex1() {
-        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<Integer>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
         list.add(5);
         list.add(4);
 
@@ -74,7 +74,7 @@ public class DoublyLinkedListTest {
 
     @Test
     public void getValueAtIndex2() {
-        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<Integer>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
         list.add(5);
         list.add(4);
         list.add(3);
@@ -86,21 +86,21 @@ public class DoublyLinkedListTest {
 
     @Test(expected = IndexOutOfBoundsException.class)
     public void throwIndexOutOfBoundsExceptionWhenGetByInvalidIndex1() {
-        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<Integer>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
 
         list.get(1);
     }
 
     @Test(expected = IndexOutOfBoundsException.class)
     public void throwIndexOutOfBoundsExceptionWhenGetByInvalidIndex0() {
-        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<Integer>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
 
         list.get(0);
     }
 
     @Test
     public void getFirstValueIfListHasElements() {
-        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<Integer>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
         list.add(5);
         list.add(4);
         list.add(3);
@@ -112,7 +112,7 @@ public class DoublyLinkedListTest {
 
     @Test
     public void getNullFirstValueIfListHasNoElements() {
-        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<Integer>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
 
         Integer result = list.first();
 
@@ -121,7 +121,7 @@ public class DoublyLinkedListTest {
 
     @Test
     public void getLastValueIfListHasElements() {
-        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<Integer>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
         list.add(5);
         list.add(4);
         list.add(3);
@@ -133,7 +133,7 @@ public class DoublyLinkedListTest {
 
     @Test
     public void getNullLastValueIfListHasNoElements() {
-        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<Integer>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
 
         Integer result = list.last();
 
@@ -142,7 +142,7 @@ public class DoublyLinkedListTest {
 
     @Test
     public void removeElementAtIndex() {
-        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<Integer>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
         list.add(5);
         list.add(4);
         list.add(3);
@@ -156,7 +156,7 @@ public class DoublyLinkedListTest {
 
     @Test
     public void removeHeadElement() {
-        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<Integer>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
         list.add(5);
         list.add(4);
         list.add(3);
@@ -170,7 +170,7 @@ public class DoublyLinkedListTest {
 
     @Test
     public void removeTailElement() {
-        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<Integer>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
         list.add(5);
         list.add(4);
         list.add(3);
@@ -184,14 +184,14 @@ public class DoublyLinkedListTest {
 
     @Test(expected = IndexOutOfBoundsException.class)
     public void throwIndexOutOfBoundsExceptionWhenRemoveInvalidIndex0() {
-        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<Integer>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
 
         list.remove(0);
     }
 
     @Test(expected = IndexOutOfBoundsException.class)
     public void throwIndexOutOfBoundsExceptionWhenRemoveInvalidIndex1() {
-        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<Integer>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedListImpl<>();
 
         list.remove(1);
     }

@@ -11,7 +11,7 @@ public class SinglyLinkedListImpl<T> implements SinglyLinkedList<T> {
     private int size;
 
     public void add(T value) {
-        Node<T> newNode = new Node<T>(value);
+        Node<T> newNode = new Node<>(value);
         if (head == null) {
             head = newNode;
             tail = newNode;
@@ -57,7 +57,6 @@ public class SinglyLinkedListImpl<T> implements SinglyLinkedList<T> {
             if ((counter + 1) == index) {
                 Node<T> nodeToRemove = node.next();
                 node.setNext(nodeToRemove.next());
-                nullOutNode(node);
                 size--;
                 return;
             }
@@ -68,9 +67,7 @@ public class SinglyLinkedListImpl<T> implements SinglyLinkedList<T> {
 
     private void removeHead() {
         if (head != null) {
-            Node<T> headNode = head;
             head = head.next();
-            nullOutNode(headNode);
             size--;
         }
     }
@@ -79,10 +76,6 @@ public class SinglyLinkedListImpl<T> implements SinglyLinkedList<T> {
         if (nodeToReturn == null) {
             throw new IndexOutOfBoundsException(format("No element at index %d", index));
         }
-    }
-
-    private void nullOutNode(Node<T> node) {
-        node = null;
     }
 
     public int size() {

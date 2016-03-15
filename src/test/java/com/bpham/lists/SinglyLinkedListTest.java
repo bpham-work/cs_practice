@@ -10,7 +10,7 @@ public class SinglyLinkedListTest {
 
     @Test
     public void returnSizeOfList() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<Integer>();
+        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
         list.add(1);
 
         int result = list.size();
@@ -20,7 +20,7 @@ public class SinglyLinkedListTest {
 
     @Test
     public void returnSize0WhenNothingInList() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<Integer>();
+        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
 
         int result = list.size();
 
@@ -29,7 +29,7 @@ public class SinglyLinkedListTest {
 
     @Test
     public void getValueAtIndex0() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<Integer>();
+        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
         list.add(5);
 
         int result = list.get(0);
@@ -39,7 +39,7 @@ public class SinglyLinkedListTest {
 
     @Test
     public void getValueAtIndex1() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<Integer>();
+        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
         list.add(5);
         list.add(4);
 
@@ -50,7 +50,7 @@ public class SinglyLinkedListTest {
 
     @Test
     public void getValueAtIndex2() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<Integer>();
+        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
         list.add(5);
         list.add(4);
         list.add(3);
@@ -62,21 +62,21 @@ public class SinglyLinkedListTest {
 
     @Test(expected = IndexOutOfBoundsException.class)
     public void throwIndexOutOfBoundsExceptionWhenGetByInvalidIndex1() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<Integer>();
+        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
 
         list.get(1);
     }
 
     @Test(expected = IndexOutOfBoundsException.class)
     public void throwIndexOutOfBoundsExceptionWhenGetByInvalidIndex0() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<Integer>();
+        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
 
         list.get(0);
     }
 
     @Test
     public void getFirstValueIfListHasElements() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<Integer>();
+        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
         list.add(5);
         list.add(4);
         list.add(3);
@@ -88,7 +88,7 @@ public class SinglyLinkedListTest {
 
     @Test
     public void getNullFirstValueIfListHasNoElements() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<Integer>();
+        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
 
         Integer result = list.first();
 
@@ -97,7 +97,7 @@ public class SinglyLinkedListTest {
 
     @Test
     public void getLastValueIfListHasElements() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<Integer>();
+        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
         list.add(5);
         list.add(4);
         list.add(3);
@@ -109,7 +109,7 @@ public class SinglyLinkedListTest {
 
     @Test
     public void getNullLastValueIfListHasNoElements() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<Integer>();
+        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
 
         Integer result = list.last();
 
@@ -118,7 +118,7 @@ public class SinglyLinkedListTest {
 
     @Test
     public void removeElementAtIndex() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<Integer>();
+        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
         list.add(5);
         list.add(4);
         list.add(3);
@@ -132,7 +132,7 @@ public class SinglyLinkedListTest {
 
     @Test
     public void removeHeadElement() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<Integer>();
+        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
         list.add(5);
         list.add(4);
         list.add(3);
@@ -146,7 +146,7 @@ public class SinglyLinkedListTest {
 
     @Test
     public void removeTailElement() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<Integer>();
+        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
         list.add(5);
         list.add(4);
         list.add(3);
@@ -160,21 +160,21 @@ public class SinglyLinkedListTest {
 
     @Test(expected = IndexOutOfBoundsException.class)
     public void throwIndexOutOfBoundsExceptionWhenRemoveInvalidIndex0() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<Integer>();
+        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
 
         list.remove(0);
     }
 
     @Test(expected = IndexOutOfBoundsException.class)
     public void throwIndexOutOfBoundsExceptionWhenRemoveInvalidIndex1() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<Integer>();
+        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
 
         list.remove(1);
     }
 
     @Test
     public void testAddingFirstNode() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<Integer>();
+        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
 
         list.add(1);
 
@@ -184,7 +184,7 @@ public class SinglyLinkedListTest {
 
     @Test
     public void testAddingMultipleNodes() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<Integer>();
+        SinglyLinkedList<Integer> list = new SinglyLinkedListImpl<>();
 
         list.add(1);
         list.add(2);
