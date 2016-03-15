@@ -3,7 +3,7 @@ package com.bpham.collections;
 import com.bpham.domain.Node;
 import com.bpham.domain.Stack;
 
-public class LinkedListStack<T> implements Stack<T> {
+public class LinkedStack<T> implements Stack<T> {
     private Node<T> head;
     private int size = 0;
 

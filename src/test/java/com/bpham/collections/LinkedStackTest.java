@@ -5,11 +5,11 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class LinkedListStackTest {
+public class LinkedStackTest {
 
     @Test
     public void pushAndPopValue() {
-        Stack<Integer> stack = new LinkedListStack<>();
+        Stack<Integer> stack = new LinkedStack<>();
 
         stack.push(1);
         stack.push(2); // head
