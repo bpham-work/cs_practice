@@ -16,7 +16,7 @@ public class MaxBinaryHeapTest {
     }
 
     @Test
-    public void highestElementShouldBeAtHead() {
+    public void maxElementShouldBeAtHead() {
         heap.add(2);
         heap.add(1);
 
@@ -28,7 +28,7 @@ public class MaxBinaryHeapTest {
     }
 
     @Test
-    public void highestElementShouldBeAtHead2() {
+    public void maxElementShouldBeAtHead2() {
         heap.add(2);
         heap.add(1);
         heap.add(2);
@@ -64,5 +64,41 @@ public class MaxBinaryHeapTest {
         assertTrue(heap.isValidHeap());
         assertEquals(11, heap.size());
         assertEquals(10, result);
+    }
+
+    @Test
+    public void popMaxElementAndMaintainValidHeap() {
+        heap.add(2);
+        heap.add(1);
+        heap.add(4);
+        heap.add(10);
+        heap.add(5);
+
+        int result = heap.pop();
+
+        assertTrue(heap.isValidHeap());
+        assertEquals(4, heap.size());
+        assertEquals(10, result);
+        assertTrue(heap.isHeapNullAtIndex(5));
+    }
+
+    @Test
+    public void popMaxElementAndMaintainValidHeap2() {
+        heap.add(2);
+        heap.add(1);
+        heap.add(6);
+        heap.add(10);
+        heap.add(5);
+        heap.add(7);
+        heap.add(8);
+        heap.add(99);
+        heap.add(44);
+        heap.add(25);
+        heap.add(8);
+
+        int result = heap.pop();
+
+        assertTrue(heap.isValidHeap());
+        assertEquals(99, result);
     }
 }

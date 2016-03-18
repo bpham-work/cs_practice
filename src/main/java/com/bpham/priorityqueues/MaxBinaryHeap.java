@@ -17,7 +17,49 @@ public class MaxBinaryHeap<T extends Comparable> implements MaxHeap<T> {
 
     @Override
     public T pop() {
-        return null;
+        T valueToReturn = heap[1];
+        deleteHead();
+        return valueToReturn;
+    }
+
+    private void deleteHead() {
+        T lastChild = heap[size];
+        heap[size] = null;
+        heap[1] = lastChild;
+        sink(1);
+        size--;
+    }
+
+    /**
+     * Method used to move head node downward to its
+     * appropriate position in the heap
+     */
+    private void sink(int index) {
+        int leftChildIndex = index*2;
+        int rightChildIndex = (index*2+1);
+        T parentValue = heap[index];
+        T leftValue = heap[leftChildIndex];
+        T rightValue = heap[rightChildIndex];
+
+        int greaterChildIndex;
+        int compare;
+
+        // Check if parent node has 2 children
+        if (rightValue == null) {
+            compare = 1;
+        } else {
+            compare = leftValue.compareTo(rightValue);
+        }
+
+        if (compare == 1) {
+            greaterChildIndex = leftChildIndex;
+        } else {
+            greaterChildIndex = rightChildIndex;
+        }
+        if (!isChildLTEToParent(parentValue, heap[greaterChildIndex])) {
+            swap(index, greaterChildIndex);
+            sink(greaterChildIndex);
+        }
     }
 
     @Override
@@ -36,7 +78,8 @@ public class MaxBinaryHeap<T extends Comparable> implements MaxHeap<T> {
     }
 
     /**
-     * Method used to move last node upward to its appropriate position in the heap
+     * Method used to move last child node upward to its
+     * appropriate position in the heap
      */
     private void swim() {
         // size is also the index of the last child
@@ -49,7 +92,7 @@ public class MaxBinaryHeap<T extends Comparable> implements MaxHeap<T> {
         }
 
         int parentIndex = childIndex/2;
-        T parentValue = heap[childIndex/2];
+        T parentValue = heap[parentIndex];
         T value = heap[childIndex];
         if (!isChildLTEToParent(parentValue, value)) {
             swap(parentIndex, childIndex);
@@ -63,6 +106,27 @@ public class MaxBinaryHeap<T extends Comparable> implements MaxHeap<T> {
         heap[index1] = value2;
         heap[index2] = value1;
     }
+
+    private boolean isChildLTEToParent(T parent, T child) {
+        if (child == null) {
+            // A parent with a null child node is still a valid heap
+            return true;
+        }
+        int compareValue = parent.compareTo(child);
+        return compareValue == 1 || compareValue == 0;
+    }
+
+    @Override
+    public int size() {
+        return size;
+    }
+
+    /**
+     * Test helper methods
+     *
+     * These helper methods were created to make assertions on
+     * the private this.heap possible
+     */
 
     public boolean isValidHeap() {
         for (int i = 1; i <= size/2; i++) {
@@ -80,22 +144,7 @@ public class MaxBinaryHeap<T extends Comparable> implements MaxHeap<T> {
         return true;
     }
 
-    private boolean isChildLTEToParent(T parent, T child) {
-        if (child == null) {
-            // A parent with a null child node is still a valid heap
-            return true;
-        }
-        int compareValue = parent.compareTo(child);
-        return compareValue == 1 || compareValue == 0;
-    }
-
-    @Override
-    public void delete() {
-
-    }
-
-    @Override
-    public int size() {
-        return size;
+    public boolean isHeapNullAtIndex(int index) {
+        return heap[index] == null;
     }
 }
