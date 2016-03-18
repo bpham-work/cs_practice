@@ -7,7 +7,7 @@ import java.util.Arrays;
 public class MaxBinaryHeap<T extends Comparable> implements MaxHeap<T> {
     private int MAX_SIZE = 10;
 
-    public T[] heap = (T[]) new Comparable[MAX_SIZE];
+    private T[] heap = (T[]) new Comparable[MAX_SIZE];
     private int size = 0;
 
     @Override
