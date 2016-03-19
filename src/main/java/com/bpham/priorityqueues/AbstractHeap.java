@@ -56,7 +56,7 @@ public abstract class AbstractHeap<T extends Comparable> implements Heap<T> {
         swim(size);
     }
 
-    protected void swim(int childIndex) {
+    private void swim(int childIndex) {
         if (childIndex < 2) {
             return;
         }
@@ -78,7 +78,7 @@ public abstract class AbstractHeap<T extends Comparable> implements Heap<T> {
         sink(1);
     }
 
-    protected void sink(int index) {
+    private void sink(int index) {
         int leftChildIndex = index*2;
         int rightChildIndex = (index*2+1);
         T parentValue = heap[index];
