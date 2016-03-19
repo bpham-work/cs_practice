@@ -1,7 +1,5 @@
 package com.bpham.priorityqueues;
 
-import com.bpham.domain.AbstractHeap;
-
 public class MaxBinaryHeap<T extends Comparable> extends AbstractHeap<T> {
 
     @Override

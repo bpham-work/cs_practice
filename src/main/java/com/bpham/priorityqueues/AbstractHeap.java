@@ -1,4 +1,6 @@
-package com.bpham.domain;
+package com.bpham.priorityqueues;
+
+import com.bpham.domain.Heap;
 
 import java.util.Arrays;
 

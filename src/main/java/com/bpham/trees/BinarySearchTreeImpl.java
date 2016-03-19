@@ -1,4 +1,4 @@
-package com.bpham.collections;
+package com.bpham.trees;
 
 import com.bpham.domain.BinarySearchTree;
 
