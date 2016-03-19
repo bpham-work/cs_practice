@@ -1,6 +1,6 @@
 package com.bpham.domain;
 
-public interface MaxHeap<T extends Comparable> {
+public interface Heap<T extends Comparable> {
     T peek();
     T pop();
     void add(T value);

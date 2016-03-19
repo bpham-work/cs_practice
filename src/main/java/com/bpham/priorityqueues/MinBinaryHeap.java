@@ -2,7 +2,7 @@ package com.bpham.priorityqueues;
 
 import com.bpham.domain.AbstractHeap;
 
-public class MaxBinaryHeap<T extends Comparable> extends AbstractHeap<T> {
+public class MinBinaryHeap<T extends Comparable> extends AbstractHeap<T> {
 
     @Override
     protected int childIndexToSwap(int leftIndex, int rightIndex) {
@@ -15,9 +15,9 @@ public class MaxBinaryHeap<T extends Comparable> extends AbstractHeap<T> {
         }
         int compare = leftValue.compareTo(rightValue);
         if (compare == 1) {
-            return leftIndex;
-        } else {
             return rightIndex;
+        } else {
+            return leftIndex;
         }
     }
 
@@ -28,6 +28,6 @@ public class MaxBinaryHeap<T extends Comparable> extends AbstractHeap<T> {
             return true;
         }
         int compareValue = parent.compareTo(child);
-        return compareValue == 1 || compareValue == 0;
+        return compareValue == -1 || compareValue == 0;
     }
 }

@@ -1,18 +1,18 @@
 package com.bpham.priorityqueue;
 
-import com.bpham.priorityqueues.MaxBinaryHeap;
+import com.bpham.priorityqueues.MinBinaryHeap;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class MaxBinaryHeapTest {
-    private MaxBinaryHeap<Integer> heap;
+public class MinBinaryHeapTest {
+    private MinBinaryHeap<Integer> heap;
 
     @Before
     public void setUp() {
-        heap = new MaxBinaryHeap<>();
+        heap = new MinBinaryHeap<>();
     }
 
     @Test
@@ -27,32 +27,32 @@ public class MaxBinaryHeapTest {
     }
 
     @Test
-    public void addElementToMakeNodeWithOneLeafAndMaintainMaxHeap() {
-        heap.add(1);
+    public void addElementToMakeNodeWithOneLeafAndMaintainMinHeap() {
         heap.add(2);
+        heap.add(1);
 
         int result = heap.peek();
 
         assertEquals(2, heap.size());
-        assertEquals(2, result);
+        assertEquals(1, result);
         assertTrue(heap.isValidHeap());
     }
 
     @Test
-    public void addElementToMakeNodeWithTwoLeavesAndMaintainMaxHeap() {
-        heap.add(1);
+    public void addElementToMakeNodeWithTwoLeavesAndMaintainMinHeap() {
         heap.add(2);
         heap.add(3);
+        heap.add(1);
 
         int result = heap.peek();
 
         assertEquals(3, heap.size());
-        assertEquals(3, result);
+        assertEquals(1, result);
         assertTrue(heap.isValidHeap());
     }
 
     @Test
-    public void addElementOfSameValueToMakeNodeWithOneLeafAndMaintainMaxHeap() {
+    public void addExistingElementOfSameValueToMakeNodeWithOneLeafAndMaintainMaxHeap() {
         heap.add(1);
         heap.add(1);
 
@@ -94,7 +94,7 @@ public class MaxBinaryHeapTest {
 
         assertTrue(heap.isValidHeap());
         assertEquals(11, heap.size());
-        assertEquals(10, result);
+        assertEquals(1, result);
     }
 
     @Test
@@ -109,52 +109,27 @@ public class MaxBinaryHeapTest {
     }
 
     @Test
-    public void popMaxElementWhenHeapHasBranchNodeWithOneChildAndMaintainMaxHeap() {
-        heap.add(2);
+    public void popMaxElementWhenHeapHasBranchNodeWithOneChildAndMaintainMinHeap() {
         heap.add(6);
+        heap.add(2);
 
         int result = heap.pop();
 
         assertTrue(heap.isValidHeap());
         assertEquals(1, heap.size());
-        assertEquals(6, result);
+        assertEquals(2, result);
     }
 
     @Test
-    public void popMaxElementWhenHeapHasBranchNodeWithTwoChildrenAndMaintainMaxHeap() {
-        heap.add(2);
+    public void popMaxElementWhenHeapHasBranchNodeWithTwoChildrenAndMaintainMinHeap() {
         heap.add(6);
         heap.add(7);
+        heap.add(2);
 
         int result = heap.pop();
 
         assertTrue(heap.isValidHeap());
         assertEquals(2, heap.size());
-        assertEquals(7, result);
-    }
-
-    @Test
-    public void popMaxElementWhenHeapHasBranchNodeWithOneChildOfSameValueAndMaintainMaxHeap() {
-        heap.add(1);
-        heap.add(1);
-
-        int result = heap.pop();
-
-        assertTrue(heap.isValidHeap());
-        assertEquals(1, heap.size());
-        assertEquals(1, result);
-    }
-
-    @Test
-    public void popMaxElementWhenHeapHasBranchNodeWithTwoChildrenOfSameValueAndMaintainMaxHeap() {
-        heap.add(1);
-        heap.add(1);
-        heap.add(1);
-
-        int result = heap.pop();
-
-        assertTrue(heap.isValidHeap());
-        assertEquals(2, heap.size());
-        assertEquals(1, result);
+        assertEquals(2, result);
     }
 }
