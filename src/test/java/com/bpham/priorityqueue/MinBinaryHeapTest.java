@@ -106,6 +106,7 @@ public class MinBinaryHeapTest {
         assertTrue(heap.isValidHeap());
         assertEquals(0, heap.size());
         assertEquals(2, result);
+        assertTrue(heap.isHeapNullAtIndex(1));
     }
 
     @Test
@@ -118,6 +119,7 @@ public class MinBinaryHeapTest {
         assertTrue(heap.isValidHeap());
         assertEquals(1, heap.size());
         assertEquals(2, result);
+        assertTrue(heap.isHeapNullAtIndex(2));
     }
 
     @Test
@@ -131,5 +133,6 @@ public class MinBinaryHeapTest {
         assertTrue(heap.isValidHeap());
         assertEquals(2, heap.size());
         assertEquals(2, result);
+        assertTrue(heap.isHeapNullAtIndex(3));
     }
 }

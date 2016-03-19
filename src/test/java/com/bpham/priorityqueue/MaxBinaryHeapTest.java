@@ -106,6 +106,7 @@ public class MaxBinaryHeapTest {
         assertTrue(heap.isValidHeap());
         assertEquals(0, heap.size());
         assertEquals(2, result);
+        assertTrue(heap.isHeapNullAtIndex(1));
     }
 
     @Test
@@ -118,6 +119,7 @@ public class MaxBinaryHeapTest {
         assertTrue(heap.isValidHeap());
         assertEquals(1, heap.size());
         assertEquals(6, result);
+        assertTrue(heap.isHeapNullAtIndex(2));
     }
 
     @Test
@@ -131,6 +133,7 @@ public class MaxBinaryHeapTest {
         assertTrue(heap.isValidHeap());
         assertEquals(2, heap.size());
         assertEquals(7, result);
+        assertTrue(heap.isHeapNullAtIndex(3));
     }
 
     @Test
@@ -143,6 +146,7 @@ public class MaxBinaryHeapTest {
         assertTrue(heap.isValidHeap());
         assertEquals(1, heap.size());
         assertEquals(1, result);
+        assertTrue(heap.isHeapNullAtIndex(2));
     }
 
     @Test
@@ -156,5 +160,6 @@ public class MaxBinaryHeapTest {
         assertTrue(heap.isValidHeap());
         assertEquals(2, heap.size());
         assertEquals(1, result);
+        assertTrue(heap.isHeapNullAtIndex(3));
     }
 }

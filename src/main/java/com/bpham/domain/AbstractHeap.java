@@ -23,9 +23,11 @@ public abstract class AbstractHeap<T extends Comparable> implements Heap<T> {
     private void deleteHead() {
         T lastChild = heap[size];
         heap[size] = null;
-        heap[1] = lastChild;
-        sink();
         size--;
+        if (size != 0) {
+            heap[1] = lastChild;
+            sink();
+        }
     }
 
     @Override
