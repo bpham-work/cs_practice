@@ -1,6 +1,6 @@
-package com.bpham.trees;
+package com.bpham.datastructures.trees;
 
-import com.bpham.domain.BinarySearchTree;
+import com.bpham.datastructures.domain.BinarySearchTree;
 
 import static java.lang.String.format;
 

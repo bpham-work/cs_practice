@@ -1,7 +1,7 @@
-package com.bpham.lists;
+package com.bpham.datastructures.lists;
 
-import com.bpham.domain.Node;
-import com.bpham.domain.Queue;
+import com.bpham.datastructures.domain.Node;
+import com.bpham.datastructures.domain.Queue;
 
 public class LinkedQueue<T> implements Queue<T> {
     public Node<T> head;

@@ -1,4 +1,4 @@
-package com.bpham.domain;
+package com.bpham.datastructures.domain;
 
 public interface Heap<T extends Comparable> {
     T peek();

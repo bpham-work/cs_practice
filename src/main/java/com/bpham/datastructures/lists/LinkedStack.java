@@ -1,7 +1,7 @@
-package com.bpham.lists;
+package com.bpham.datastructures.lists;
 
-import com.bpham.domain.Node;
-import com.bpham.domain.Stack;
+import com.bpham.datastructures.domain.Node;
+import com.bpham.datastructures.domain.Stack;
 
 public class LinkedStack<T> implements Stack<T> {
     private Node<T> head;

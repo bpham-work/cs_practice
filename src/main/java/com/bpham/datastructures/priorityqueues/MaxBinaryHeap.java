@@ -1,4 +1,4 @@
-package com.bpham.priorityqueues;
+package com.bpham.datastructures.priorityqueues;
 
 public class MaxBinaryHeap<T extends Comparable> extends AbstractHeap<T> {
 

@@ -1,6 +1,6 @@
-package com.bpham.lists;
+package com.bpham.datastructures.lists;
 
-import com.bpham.trees.BinarySearchTreeImpl;
+import com.bpham.datastructures.trees.BinarySearchTreeImpl;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

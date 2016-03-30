@@ -1,6 +1,6 @@
-package com.bpham.lists;
+package com.bpham.datastructures.lists;
 
-import com.bpham.domain.DoublyLinkedList;
+import com.bpham.datastructures.domain.DoublyLinkedList;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

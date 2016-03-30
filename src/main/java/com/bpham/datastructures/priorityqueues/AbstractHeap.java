@@ -1,6 +1,6 @@
-package com.bpham.priorityqueues;
+package com.bpham.datastructures.priorityqueues;
 
-import com.bpham.domain.Heap;
+import com.bpham.datastructures.domain.Heap;
 
 import java.util.Arrays;
 

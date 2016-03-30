@@ -1,6 +1,6 @@
-package com.bpham.lists;
+package com.bpham.datastructures.lists;
 
-import com.bpham.domain.Stack;
+import com.bpham.datastructures.domain.Stack;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

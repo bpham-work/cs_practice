@@ -1,7 +1,7 @@
-package com.bpham.lists;
+package com.bpham.datastructures.lists;
 
-import com.bpham.domain.DoublyLinkedList;
-import com.bpham.domain.Node;
+import com.bpham.datastructures.domain.DoublyLinkedList;
+import com.bpham.datastructures.domain.Node;
 
 import static java.lang.String.format;
 

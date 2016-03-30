@@ -1,4 +1,4 @@
-package com.bpham.lists;
+package com.bpham.datastructures.lists;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.bpham.domain;
+package com.bpham.datastructures.domain;
 
 public interface DoublyLinkedList<T> {
     int size();

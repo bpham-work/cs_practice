@@ -1,4 +1,4 @@
-package com.bpham.domain;
+package com.bpham.datastructures.domain;
 
 public interface BinarySearchTree<T> {
     void add(T value);
