@@ -98,9 +98,9 @@ public class BinarySearchTreeImpl<T extends Comparable<T>> implements BinarySear
     }
 
     public class Node {
-        T value;
-        Node left;
-        Node right;
+        public T value;
+        public Node left;
+        public Node right;
 
         public Node(T value) {
             this.value = value;
