@@ -1,6 +1,6 @@
-package com.bpham.lists;
+package com.bpham.datastructures.lists;
 
-import com.bpham.domain.SinglyLinkedList;
+import com.bpham.datastructures.domain.SinglyLinkedList;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

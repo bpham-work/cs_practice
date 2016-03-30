@@ -1,6 +1,6 @@
-package com.bpham.priorityqueue;
+package com.bpham.datastructures.priorityqueue;
 
-import com.bpham.priorityqueues.MinBinaryHeap;
+import com.bpham.datastructures.priorityqueues.MinBinaryHeap;
 import org.junit.Before;
 import org.junit.Test;
 

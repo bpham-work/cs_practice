@@ -1,4 +1,4 @@
-package com.bpham.domain;
+package com.bpham.datastructures.domain;
 
 public interface SinglyLinkedList<T> {
     int size();

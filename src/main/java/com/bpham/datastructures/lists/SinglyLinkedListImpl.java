@@ -1,7 +1,7 @@
-package com.bpham.lists;
+package com.bpham.datastructures.lists;
 
-import com.bpham.domain.Node;
-import com.bpham.domain.SinglyLinkedList;
+import com.bpham.datastructures.domain.Node;
+import com.bpham.datastructures.domain.SinglyLinkedList;
 
 import static java.lang.String.format;
 
