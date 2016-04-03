@@ -16,10 +16,26 @@ public class SortTestHelper {
         return true;
     }
 
-    public static Integer[] createArray(int size) {
+    public static Integer[] createRandomArray(int size) {
         Integer[] array = new Integer[size];
         for (int x = 0; x < size; x++) {
             array[x] = random.nextInt(100);
+        }
+        return array;
+    }
+
+    public static Integer[] createReverseSortedArray(int size) {
+        Integer[] array = new Integer[size];
+        for (int x = size; x > 0; x--) {
+            array[size - x] = x;
+        }
+        return array;
+    }
+
+    public static Integer[] createSortedArray(int size) {
+        Integer[] array = new Integer[size];
+        for (int x = 0; x < size; x++) {
+            array[x] = x;
         }
         return array;
     }
