@@ -1,6 +1,6 @@
 package com.bpham.sorts;
 
-public class MergeSort {
+public class MergeSort extends AbstractSorter {
 
     public static void sort(Comparable[] array) {
         Comparable[] auxArray = new Comparable[array.length];
@@ -40,9 +40,5 @@ public class MergeSort {
                 rightPointer++;
             }
         }
-    }
-
-    public static boolean less(Comparable value1, Comparable value2) {
-        return value1.compareTo(value2) == -1;
     }
 }
