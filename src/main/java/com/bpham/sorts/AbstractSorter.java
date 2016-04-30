@@ -13,6 +13,6 @@ public abstract class AbstractSorter {
 
     protected static boolean lessThanOrEqual(Comparable value1, Comparable value2) {
         int compareValue = value1.compareTo(value2);
-        return compareValue == -1 || compareValue == 0;
+        return compareValue < 0 || compareValue == 0;
     }
 }
