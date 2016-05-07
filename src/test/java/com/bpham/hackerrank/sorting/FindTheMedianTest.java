@@ -1,4 +1,4 @@
-package com.bpham.sorts;
+package com.bpham.hackerrank.sorting;
 
 import com.bpham.hackerrank.sorting.FindTheMedian;
 import org.junit.Test;
