@@ -1,6 +1,5 @@
 package com.bpham.hackerrank.sorting;
 
-import com.bpham.hackerrank.sorting.FindTheMedian;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
